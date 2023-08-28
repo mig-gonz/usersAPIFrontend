@@ -16,9 +16,10 @@ const Users = async () => {
             <h2 className="card-title">{user.name}</h2>
             <p>user name: {user.username}</p>
             <p>email: {user.email}</p>
-            <div className="card-actions justify-end">
+            <div className="card-actions items-center ">
+              <p>View an example of get user by id for your application:</p>
               <Link href={`/users/${user.id}`}>
-                <button className="btn btn-primary">userId: {user.id}</button>
+                <button className="btn btn-accent">userId: {user.id}</button>
               </Link>
             </div>
           </div>

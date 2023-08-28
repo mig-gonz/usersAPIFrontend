@@ -6,9 +6,9 @@ export default function Home() {
       <div className="mt-5 bg-base-200">
         <div className="ml-5">
           <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Mock Data</h1>
             <div className="flex flex-col items-center">
-              <h2 className="mt-10">
+              <h1 className="text-3xl font-bold">getAllUsers()</h1>
+              <h2 className="mt-5">
                 View an example of get all users for your application:
               </h2>
               <Link href={"/users"}>
