@@ -1,21 +1,13 @@
 import React from "react";
 import Link from "next/link";
-
-async function getAllUsers() {
-  const res = await fetch("http://localhost:5000/users");
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
+import getAllUsers from "@/lib/getAllUsers";
 
 const Users = async () => {
-  const users = await getAllUsers();
+  const usersData: Promise<User[]> = await getAllUsers();
+
+  const users = await usersData;
+
+  console.log("hello");
   return (
     <div className="card md:w-[600px] bg-base-100 shadow-xl m-auto mt-5">
       {users.map((user: any) => {
@@ -26,7 +18,7 @@ const Users = async () => {
             <p>email: {user.email}</p>
             <div className="card-actions justify-end">
               <Link href={`/users/${user.id}`}>
-                <button className="btn btn-primary">/user/:id</button>
+                <button className="btn btn-primary">userId: {user.id}</button>
               </Link>
             </div>
           </div>
