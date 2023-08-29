@@ -1,5 +1,7 @@
-import getUser from "@/lib/getUser";
+"use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 type Params = {
   params: {
@@ -7,33 +9,69 @@ type Params = {
   };
 };
 
-export default async function UserPage({ params: { userId } }: Params) {
-  const userData: Promise<User> = getUser(userId);
+export default function UserPage({ params: { userId } }: Params) {
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
 
-  const user = await userData;
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await fetch(`http://localhost:5000/users/${userId}`);
+        if (res.ok) {
+          const userData = await res.json();
+          setUser(userData);
+        } else {
+          console.error("Failed to fetch user data");
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+    fetchUser();
+  }, [userId]);
+
+  const handleDelete = async () => {
+    if (!user) return;
+
+    try {
+      const response = await fetch(`http://localhost:5000/users/${user.id}`, {
+        method: "DELETE",
+        headers: {
+          "Cache-Control": "no-cache",
+        },
+      });
+
+      if (response.ok) {
+        router.push("/users");
+      } else {
+        console.error("Failed to delete user");
+      }
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
 
   const features = [
-    { name: "Name:", description: `${user.name}` },
+    { name: "Name:", description: `${user?.name}` },
     {
       name: "user name:",
-      description: `${user.username}`,
+      description: `${user?.username}`,
     },
-    { name: "Email:", description: `${user.email}` },
+    { name: "Email:", description: `${user?.email}` },
     {
       name: "Phone:",
-      description: `${user.phone}`,
+      description: `${user?.phone}`,
     },
-    { name: "Website:", description: `${user.website}` },
+    { name: "Website:", description: `${user?.website}` },
     {
       name: "Company name:",
-      description: `${user.company_name}`,
+      description: `${user?.company_name}`,
     },
   ];
 
-  // console.log("hello");
   return (
-    <div className="bg-white">
-      <div className="md:w-[500px] mx-auto max-w-2xl  items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+    <div>
+      <div className="mt-6 md:w-[500px] mx-auto max-w-2xl items-center gap-x-8 px-4  sm:px-6  lg:max-w-7xl lg:grid-cols-2 lg:px-8">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Specific User
@@ -56,7 +94,20 @@ export default async function UserPage({ params: { userId } }: Params) {
           </dl>
         </div>
         <div className="mt-8">
-          <Link href={"/"} className="btn btn-accent btn-wide w-full">
+          <div className="flex justify-center space-x-4">
+            <button
+              className="btn btn-outline btn-error w-40"
+              onClick={handleDelete}
+            >
+              Delete
+            </button>
+            <Link href={`/users/${userId}/update`}>
+              <button className="btn btn-outline btn-warning w-40">
+                Update
+              </button>
+            </Link>
+          </div>
+          <Link href={"/"} className="btn mt-3 btn-outline btn-success w-full">
             Home
           </Link>
         </div>
