@@ -5,31 +5,76 @@ export default function Home() {
     <div>
       <div className="mt-5 bg-base-200">
         <div className="ml-5">
-          <div className="max-w-md">
-            <div className="flex flex-col md:flex-row md:space-x-4 ">
+          <div>
+            <div>
               <div>
                 <h1 className="text-3xl font-bold">Get All Users</h1>
                 <h2 className="mt-5">
                   View an example of how to retrieve a list of all users for
                   your application:
+                  <span className="btn btn-sm btn-accent ml-5">
+                    <Link href={"/users"}>/users</Link>
+                  </span>
                 </h2>
-                <Link href={"/users"}>
-                  <button className="btn btn-wide btn-accent mt-5">
-                    /users
-                  </button>
-                </Link>
+                <p>
+                  As well as explore the following actions for individual users:
+                </p>
+                <ul className="list-disc ml-8 mt-2">
+                  <li>Delete users using the DELETE method</li>
+                  <li>Update user information using the PUT method</li>
+                </ul>
+                <p className="mt-3">Routes:</p>
+                <ul className="list-disc ml-8 mt-2">
+                  <li>
+                    GET: "http://localhost:5000/users", Fetches all users.
+                  </li>
+                  <li>
+                    GET: "http://localhost:5000/users/:id", Fetches user by id.
+                  </li>
+                </ul>
               </div>
-              <div>
+              <div className="divider"></div>
+              <div className="mt-5">
                 <h1 className="text-3xl font-bold">Add New User</h1>
                 <h2 className="mt-5">
                   View an example of how to add a new user to the database using
                   the POST method:
+                  <span className="btn btn-sm btn-accent ml-5">
+                    <Link href={"/adduser"}>/adduser</Link>
+                  </span>
                 </h2>
-                <Link href={"/adduser"}>
-                  <button className="btn btn-wide btn-accent mt-5">
-                    /adduser
-                  </button>
-                </Link>
+                <p>
+                  Fill out the form to add the user to the database using a POST
+                  method
+                </p>
+                <p>Route:</p>
+                <ul className="list-disc ml-8 mt-2">
+                  <li>POST: "http://localhost:5000/users", adds new user.</li>
+                </ul>
+                <p className="mt-3">User Object ex.</p>
+                <pre className="ml-5">
+                  <code>
+                    {`User = {
+  id: 12,
+  name: "John Doe",
+  username: "johndoe",
+  email: "john@example.com",
+  phone: "123-456-7890",
+  website: "www.johndoe.com",
+  company_name: "ABC Inc.",
+  catch_phrase: "Lorem ipsum dolor sit amet",
+  bs: "Lorem ipsum",
+  Address: {
+    street: "123 Main St",
+    suite: "Apt 456",
+    city: "Cityville",
+    zipcode: "12345",
+    lat: "37.7749",
+    lng: "-122.4194",
+  },
+};`}
+                  </code>
+                </pre>
               </div>
             </div>
           </div>
