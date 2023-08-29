@@ -12,9 +12,11 @@ export default function Home() {
                 <h2 className="mt-5">
                   View an example of how to retrieve a list of all users for
                   your application:
-                  <span className="btn btn-sm btn-accent ml-5">
-                    <Link href={"/users"}>/users</Link>
-                  </span>
+                  <Link href={"/users"}>
+                    <span className="btn btn-sm btn-outline btn-success ml-5">
+                      /users
+                    </span>
+                  </Link>
                 </h2>
                 <p>
                   As well as explore the following actions for individual users:
@@ -39,9 +41,11 @@ export default function Home() {
                 <h2 className="mt-5">
                   View an example of how to add a new user to the database using
                   the POST method:
-                  <span className="btn btn-sm btn-accent ml-5">
-                    <Link href={"/adduser"}>/adduser</Link>
-                  </span>
+                  <Link href={"/adduser"}>
+                    <span className="btn btn-sm btn-outline btn-success ml-5">
+                      /adduser
+                    </span>
+                  </Link>
                 </h2>
                 <p>
                   Fill out the form to add the user to the database using a POST

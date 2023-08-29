@@ -76,48 +76,64 @@ export default function UpdateUserPage({ params: { userId } }: Params) {
 
   return (
     <div>
-      <h1>Edit User Information</h1>
+      <h1 className="text-2xl text-center mt-5 font-bold mb-4">
+        Edit User Information
+      </h1>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
+      <form onSubmit={handleSubmit} className="grid gap-4 max-w-md mx-auto">
+        <div className="grid grid-cols-2 gap-4">
+          <label htmlFor="name" className="text-sm font-medium self-center">
+            Name:
+          </label>
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
+            className="border rounded-md py-2 px-4"
           />
         </div>
-        <div>
-          <label htmlFor="username">Username:</label>
+        <div className="grid grid-cols-2 gap-4">
+          <label htmlFor="username" className="text-sm font-medium self-center">
+            Username:
+          </label>
           <input
             type="text"
             name="username"
             value={formData.username}
             onChange={handleInputChange}
+            className="border rounded-md py-2 px-4"
           />
         </div>
         {/* Add input fields for other properties */}
-        <div>
-          <label htmlFor="email">Email:</label>
+        <div className="grid grid-cols-2 gap-4">
+          <label htmlFor="email" className="text-sm font-medium self-center">
+            Email:
+          </label>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
+            className="border rounded-md py-2 px-4"
           />
         </div>
-        <div>
-          <label htmlFor="phone">Phone:</label>
+        <div className="grid grid-cols-2 gap-4">
+          <label htmlFor="phone" className="text-sm font-medium self-center">
+            Phone:
+          </label>
           <input
             type="tel"
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
+            className="border rounded-md py-2 px-4"
           />
         </div>
         {/* Add more input fields for other properties */}
-        <button type="submit">Update</button>
+        <button type="submit" className="btn btn-sm btn-outline btn-success">
+          Update
+        </button>
       </form>
     </div>
   );

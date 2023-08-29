@@ -27,7 +27,9 @@ const Users = async () => {
                 <p>Go to user page:</p>
 
                 <Link href={`/users/${user.id}`}>
-                  <button className="btn btn-accent">userId: {user.id}</button>
+                  <button className="btn btn-outline btn-success">
+                    userId: {user.id}
+                  </button>
                 </Link>
               </div>
               <div className="divider"></div>

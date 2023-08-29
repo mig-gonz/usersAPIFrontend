@@ -101,12 +101,13 @@ const AddUser = () => {
   return (
     <div>
       <h1 className="text-3xl ml-5">Add New User</h1>
-      {/*  //  108  md:flex justify-center */}
-      <div className="md:flex md:space-x-4 md:ml-5">
-        <form onSubmit={handleSubmit}>
+      <div className="">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 md:grid-cols-3 md:ml-10"
+        >
           {/* First set of 3 */}
-          {/* // 111 flex items-center space-x-3 space-y-6 */}
-          <div className="grid md:flex md:space-x-3 md:items-center">
+          <div className=" grid grid-cols-1">
             <label htmlFor="name">Name:</label>
             <input
               type="text"
@@ -143,8 +144,7 @@ const AddUser = () => {
           </div>
 
           {/* second set */}
-          {/* flex space-y-6  space-x-3 items-center */}
-          <div className="grid md:flex  md:items-center md:space-x-3 md:space-y-5">
+          <div className="   grid grid-cols-1">
             <label htmlFor="phone">Phone:</label>
             <input
               type="tel"
@@ -180,8 +180,7 @@ const AddUser = () => {
           </div>
 
           {/* third set */}
-          {/* flex space-y-6 space-x-3 items-center */}
-          <div className="grid md:flex md:items-center md:space-x-3 md:space-y-5">
+          <div className="   grid grid-cols-1">
             <label htmlFor="catch_phrase">Catch Phrase:</label>
             <input
               type="text"
@@ -217,8 +216,7 @@ const AddUser = () => {
           </div>
 
           {/* fourth set */}
-          {/* flex space-y-6 space-x-3 items-center */}
-          <div className="grid md:flex md:items-center md:space-x-3 md:space-y-5">
+          <div className="  grid grid-cols-1">
             <label htmlFor="suite">Suite:</label>
             <input
               type="text"
@@ -254,8 +252,7 @@ const AddUser = () => {
           </div>
 
           {/* Last set (2) */}
-          {/* flex space-y-6  space-x-3 items-center */}
-          <div className="grid md:flex  md:items-center md:justify-center md:space-x-3 md:space-y-5">
+          <div className="  grid grid-cols-1">
             <label htmlFor="lat">Latitude:</label>
             <input
               type="text"
@@ -278,12 +275,18 @@ const AddUser = () => {
               className="input input-bordered input-accent w-full max-w-xs"
             />
           </div>
-          <div className="md:flex  md:justify-center md:space-x-3">
-            <button type="submit" className="btn btn-accent btn-wide mt-5">
+          <div className="">
+            <button
+              type="submit"
+              className="btn btn-outline btn-warning btn-wide mt-5"
+            >
               Add User
             </button>
-            <Link href={"/"} className="btn btn-accent btn-wide mt-5">
-              Home
+            <Link
+              href={"/"}
+              className="btn btn-outline btn-warning btn-wide mt-5"
+            >
+              Go Home
             </Link>
           </div>
         </form>
