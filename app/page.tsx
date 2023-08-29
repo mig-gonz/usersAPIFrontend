@@ -6,7 +6,7 @@ export default function Home() {
       <div className="mt-5 bg-base-200">
         <div className="ml-5">
           <div className="max-w-md">
-            <div className="flex space-x-14 ">
+            <div className="flex flex-col md:flex-row md:space-x-4 ">
               <div>
                 <h1 className="text-3xl font-bold">Get All Users</h1>
                 <h2 className="mt-5">
