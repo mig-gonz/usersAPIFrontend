@@ -94,7 +94,7 @@ export default function UserPage({ params: { userId } }: Params) {
           </dl>
         </div>
         <div className="mt-8">
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-center md:space-x-4">
             <button
               className="btn btn-outline btn-error w-40"
               onClick={handleDelete}

@@ -25,15 +25,6 @@ export default function Home() {
                   <li>Delete users using the DELETE method</li>
                   <li>Update user information using the PUT method</li>
                 </ul>
-                <p className="mt-3">Routes:</p>
-                <ul className="list-disc ml-8 mt-2">
-                  <li>
-                    GET: "http://localhost:5000/users", Fetches all users.
-                  </li>
-                  <li>
-                    GET: "http://localhost:5000/users/:id", Fetches user by id.
-                  </li>
-                </ul>
               </div>
               <div className="divider"></div>
               <div className="mt-5">
@@ -47,13 +38,23 @@ export default function Home() {
                     </span>
                   </Link>
                 </h2>
-                <p>
-                  Fill out the form to add the user to the database using a POST
-                  method
-                </p>
-                <p>Route:</p>
+                <div className="divider"></div>
+                <p className="mt-3">Routes:</p>
                 <ul className="list-disc ml-8 mt-2">
+                  <li>
+                    GET: "http://localhost:5000/users", Fetches all users.
+                  </li>
+                  <li>
+                    GET: "http://localhost:5000/users/:id", Fetches user by id.
+                  </li>
                   <li>POST: "http://localhost:5000/users", adds new user.</li>
+                  <li>
+                    DELETE: "http://localhost:5000/users/:id", Deletes user by
+                    id.
+                  </li>
+                  <li>
+                    PUT: "http://localhost:5000/users/:id", Updates user by id.
+                  </li>
                 </ul>
                 <p className="mt-3">User Object ex.</p>
                 <pre className="ml-5">
