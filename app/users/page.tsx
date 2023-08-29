@@ -22,6 +22,7 @@ const Users = async () => {
                 <button className="btn btn-accent">userId: {user.id}</button>
               </Link>
             </div>
+            <div className="divider"></div>
           </div>
         );
       })}
