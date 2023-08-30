@@ -27,7 +27,7 @@ export default function page() {
             </li>
           </ul>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            I created this API so that others can use it to populate their
+            I created the API so that others can use it to populate their
             front-end applications with mock user data, thus saving their time
             from building an API just for sample data. This way, they can focus
             on working on the frontend.

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type Params = {
   params: {
@@ -134,6 +135,9 @@ export default function UpdateUserPage({ params: { userId } }: Params) {
         <button type="submit" className="btn btn-sm btn-outline btn-success">
           Update
         </button>
+        <Link href={"/"} className="btn btn-sm btn-outline btn-warning">
+          Go Home
+        </Link>
       </form>
     </div>
   );

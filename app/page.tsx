@@ -1,10 +1,17 @@
 import Link from "next/link";
 
 export default function Home() {
+  const customScrollbarStyle = `
+  /* Hide the scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
   return (
     <div>
-      <div className="mt-5 bg-base-200">
-        <div className="ml-5">
+      <style>{customScrollbarStyle}</style>
+      <div className="md:h-[800px] overflow-hidden mt-5 bg-base-200">
+        <div className="ml-5 h-full overflow-y-scroll p-5">
           <div>
             <div>
               <div>
