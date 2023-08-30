@@ -66,7 +66,7 @@ export default function Home() {
                   <li>
                     POST:
                     <code className="bg-gray-100 p-1 rounded-md text-blue-500">
-                      "http://localhost:5000/users
+                      http://localhost:5000/users
                     </code>
                     , adds new user.
                   </li>
