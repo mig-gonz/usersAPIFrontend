@@ -47,20 +47,42 @@ export default function Home() {
                 </h2>
                 <div className="divider"></div>
                 <p className="mt-3">Routes:</p>
-                <ul className="list-disc ml-8 mt-2">
+                <ul className="list-disc ml-8 mt-2 space-y-3">
+                  {/* Route path content */}
                   <li>
-                    GET: "http://localhost:5000/users", Fetches all users.
+                    GET:
+                    <code className="bg-gray-100 p-1 rounded-md text-blue-500">
+                      http://localhost:5000/users
+                    </code>
+                    , Fetches all users.
                   </li>
                   <li>
-                    GET: "http://localhost:5000/users/:id", Fetches user by id.
+                    GET:
+                    <code className="bg-gray-100 p-1 rounded-md text-blue-500">
+                      http://localhost:5000/users/:id
+                    </code>
+                    , Fetches user by id.
                   </li>
-                  <li>POST: "http://localhost:5000/users", adds new user.</li>
                   <li>
-                    DELETE: "http://localhost:5000/users/:id", Deletes user by
-                    id.
+                    POST:
+                    <code className="bg-gray-100 p-1 rounded-md text-blue-500">
+                      "http://localhost:5000/users
+                    </code>
+                    , adds new user.
                   </li>
                   <li>
-                    PUT: "http://localhost:5000/users/:id", Updates user by id.
+                    DELETE:
+                    <code className="bg-gray-100 p-1 rounded-md text-blue-500">
+                      http://localhost:5000/users/:id
+                    </code>
+                    , Deletes user by id.
+                  </li>
+                  <li>
+                    PUT:
+                    <code className="bg-gray-100 p-1 rounded-md text-blue-500">
+                      http1://localhost:5000/users/:id
+                    </code>
+                    , Updates user by id.
                   </li>
                 </ul>
                 <p className="mt-3">User Object ex.</p>
