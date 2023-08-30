@@ -51,28 +51,28 @@ export default function Home() {
                   <li>
                     GET:
                     <code className="bg-gray-100 p-1 rounded-md text-blue-500">
-                      http://localhost:5000/users
+                      https://9tv4edek55.execute-api.us-east-1.amazonaws.com/prod/users
                     </code>
                     , Fetches all users.
                   </li>
                   <li>
                     GET:
                     <code className="bg-gray-100 p-1 rounded-md text-blue-500">
-                      http://localhost:5000/users/:id
+                      https://9tv4edek55.execute-api.us-east-1.amazonaws.com/prod/users/:id
                     </code>
                     , Fetches user by id.
                   </li>
                   <li>
                     POST:
                     <code className="bg-gray-100 p-1 rounded-md text-blue-500">
-                      http://localhost:5000/users
+                      https://9tv4edek55.execute-api.us-east-1.amazonaws.com/prod/users
                     </code>
                     , adds new user.
                   </li>
                   <li>
                     DELETE:
                     <code className="bg-gray-100 p-1 rounded-md text-blue-500">
-                      http://localhost:5000/users/:id
+                      https://9tv4edek55.execute-api.us-east-1.amazonaws.com/prod/users/:id
                     </code>
                     , Deletes user by id.
                   </li>
