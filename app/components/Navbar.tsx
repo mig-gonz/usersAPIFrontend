@@ -1,10 +1,10 @@
 "use client";
 import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "UsersAPI", href: "/", current: false },
+  { name: "UsersAPI", href: "/", current: true },
   // { name: "Developer", href: "#", current: false },
   { name: "About", href: "/about", current: false },
   // { name: "API", href: "#", current: false },
@@ -51,7 +51,7 @@ const Navbar = () => {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-gray-900 text-white"
+                            ? "text-black hover:bg-gray-700 hover:text-white btn-success btn-outline underline"
                             : "text-black hover:bg-gray-700 hover:text-white",
                           "rounded-md px-3 py-2 text-sm font-medium"
                         )}
