@@ -1,23 +1,38 @@
+"use client";
 import React from "react";
 import Link from "next/link";
-import getAllUsers from "@/lib/getAllUsers";
+import { useState, useEffect } from "react";
 
-const Users = async () => {
-  const usersData: Promise<User[]> = await getAllUsers();
+const Users = () => {
+  const [users, setUsers] = useState<User[]>();
 
-  const users = await usersData;
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/users");
+        if (response.ok) {
+          const usersData = await response.json(); // Parse the response
+          setUsers(usersData); // Update the users state
+        } else {
+          console.error("Failed to fetch users");
+        }
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
 
-  // console.log("hello");
+    fetchUsers();
+  }, []);
 
   return (
     <>
-      <p className="ml-5 mt-2">
+      <p className=" mt-2">
         Click on any user to see an example of a detail page and have the option
         <br />
         to update their information or delete the user from the database.
       </p>
       <div className="card md:w-[600px] bg-base-100 shadow-xl m-auto mt-5">
-        {users.map((user: any) => {
+        {users?.map((user: any) => {
           return (
             <div key={user.id} className="card-body">
               <h2 className="card-title">{user.name}</h2>
