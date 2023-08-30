@@ -275,7 +275,7 @@ const AddUser = () => {
               className="input input-bordered input-accent w-full max-w-xs"
             />
           </div>
-          <div className="">
+          <div className="flex flex-col m-auto">
             <button
               type="submit"
               className="btn btn-outline btn-warning btn-wide mt-5"
