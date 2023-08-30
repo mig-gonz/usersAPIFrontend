@@ -106,7 +106,6 @@ export default function UpdateUserPage({ params: { userId } }: Params) {
             className="border rounded-md py-2 px-4"
           />
         </div>
-        {/* Add input fields for other properties */}
         <div className="grid grid-cols-2 gap-4">
           <label htmlFor="email" className="text-sm font-medium self-center">
             Email:
@@ -131,7 +130,6 @@ export default function UpdateUserPage({ params: { userId } }: Params) {
             className="border rounded-md py-2 px-4"
           />
         </div>
-        {/* Add more input fields for other properties */}
         <button type="submit" className="btn btn-sm btn-outline btn-success">
           Update
         </button>

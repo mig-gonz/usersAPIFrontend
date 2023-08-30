@@ -11,8 +11,8 @@ const Users = () => {
       try {
         const response = await fetch("http://localhost:5000/users");
         if (response.ok) {
-          const usersData = await response.json(); // Parse the response
-          setUsers(usersData); // Update the users state
+          const usersData = await response.json();
+          setUsers(usersData);
         } else {
           console.error("Failed to fetch users");
         }
