@@ -9,7 +9,9 @@ const Users = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5000/users");
+        const response = await fetch(
+          "https://9tv4edek55.execute-api.us-east-1.amazonaws.com/prod/users"
+        );
         if (response.ok) {
           const usersData = await response.json();
           setUsers(usersData);

@@ -35,7 +35,9 @@ export default function UpdateUserPage({ params: { userId } }: Params) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/users/${userId}`);
+        const res = await fetch(
+          `https://9tv4edek55.execute-api.us-east-1.amazonaws.com/prod/users/${userId}`
+        );
         const userData = await res.json();
         setFormData(userData);
       } catch (error) {
@@ -57,13 +59,16 @@ export default function UpdateUserPage({ params: { userId } }: Params) {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:5000/users/${userId}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `https://9tv4edek55.execute-api.us-east-1.amazonaws.com/prod/users/${userId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         router.push(`/users/${userId}`);

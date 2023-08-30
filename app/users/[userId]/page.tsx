@@ -16,7 +16,9 @@ export default function UserPage({ params: { userId } }: Params) {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/users/${userId}`);
+        const res = await fetch(
+          `https://9tv4edek55.execute-api.us-east-1.amazonaws.com/prod/users/${userId}`
+        );
         if (res.ok) {
           const userData = await res.json();
           setUser(userData);
@@ -34,12 +36,15 @@ export default function UserPage({ params: { userId } }: Params) {
     if (!user) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/users/${user.id}`, {
-        method: "DELETE",
-        headers: {
-          "Cache-Control": "no-cache",
-        },
-      });
+      const response = await fetch(
+        `hhttps://9tv4edek55.execute-api.us-east-1.amazonaws.com/prod/users/${user.id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Cache-Control": "no-cache",
+          },
+        }
+      );
 
       if (response.ok) {
         router.push("/users");
