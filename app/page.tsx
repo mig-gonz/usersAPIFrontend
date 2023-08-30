@@ -34,6 +34,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="divider"></div>
+
               <div className="mt-5">
                 <h1 className="text-3xl font-bold">Add New User</h1>
                 <h2 className="mt-5">
@@ -46,47 +47,48 @@ export default function Home() {
                   </Link>
                 </h2>
                 <div className="divider"></div>
+                {/* routes */}
                 <p className="mt-3">Routes:</p>
-                <ul className="list-disc ml-8 mt-2 space-y-3">
+                <ul className="list-disc ml-8 mt-2 space-y-3 ">
                   <li>
                     GET:
-                    <code className="bg-gray-100 p-1 rounded-md text-blue-500">
+                    <span className="bg-gray-100 p-1 rounded-md text-blue-500 inline-block">
                       http://localhost:5000/users
-                    </code>
+                    </span>
                     , Fetches all users.
                   </li>
                   <li>
                     GET:
-                    <code className="bg-gray-100 p-1 rounded-md text-blue-500">
+                    <span className="bg-gray-100 p-1 rounded-md text-blue-500 inline-block">
                       http://localhost:5000/users/:id
-                    </code>
+                    </span>
                     , Fetches user by id.
                   </li>
                   <li>
                     POST:
-                    <code className="bg-gray-100 p-1 rounded-md text-blue-500">
+                    <span className="bg-gray-100 p-1 rounded-md text-blue-500 inline-block">
                       http://localhost:5000/users
-                    </code>
+                    </span>
                     , adds new user.
                   </li>
                   <li>
                     DELETE:
-                    <code className="bg-gray-100 p-1 rounded-md text-blue-500">
+                    <span className="bg-gray-100 p-1 rounded-md text-blue-500 inline-block">
                       http://localhost:5000/users/:id
-                    </code>
+                    </span>
                     , Deletes user by id.
                   </li>
                   <li>
                     PUT:
-                    <code className="bg-gray-100 p-1 rounded-md text-blue-500">
+                    <span className="bg-gray-100 p-1 rounded-md text-blue-500 inline-block">
                       http1://localhost:5000/users/:id
-                    </code>
+                    </span>
                     , Updates user by id.
                   </li>
                 </ul>
                 <p className="mt-3">User Object ex.</p>
-                <pre className="ml-5">
-                  <code>
+                <pre className="md:ml-5">
+                  <span>
                     {`User = {
   id: 12,
   name: "John Doe",
@@ -101,12 +103,12 @@ export default function Home() {
     street: "123 Main St",
     suite: "Apt 456",
     city: "Cityville",
-    zipcode: "12345",
+    zipspan: "12345",
     lat: "37.7749",
     lng: "-122.4194",
   },
 };`}
-                  </code>
+                  </span>
                 </pre>
               </div>
             </div>
