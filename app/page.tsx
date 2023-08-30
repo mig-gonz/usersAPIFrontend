@@ -48,7 +48,6 @@ export default function Home() {
                 <div className="divider"></div>
                 <p className="mt-3">Routes:</p>
                 <ul className="list-disc ml-8 mt-2 space-y-3">
-                  {/* Route path content */}
                   <li>
                     GET:
                     <code className="bg-gray-100 p-1 rounded-md text-blue-500">
