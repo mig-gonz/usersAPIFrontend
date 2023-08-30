@@ -79,7 +79,7 @@ export default function Home() {
                   <li>
                     PUT:
                     <code className="bg-gray-100 p-1 rounded-md text-blue-500">
-                      http1://localhost:5000/users/:id
+                      https://9tv4edek55.execute-api.us-east-1.amazonaws.com/prod/users/:id
                     </code>
                     , Updates user by id.
                   </li>
