@@ -288,6 +288,12 @@ const AddUser = () => {
             >
               Go Home
             </Link>
+            <Link
+              href={"/users"}
+              className="btn btn-outline btn-warning btn-wide mt-5"
+            >
+              /users
+            </Link>
           </div>
         </form>
       </div>
