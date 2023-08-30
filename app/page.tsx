@@ -17,8 +17,8 @@ export default function Home() {
               <div>
                 <h1 className="text-3xl font-bold">Get All Users</h1>
                 <h2 className="mt-5">
-                  View an example of how to retrieve a list of all users for
-                  your application:
+                  View an example of retrieving a list of all users for your
+                  application:
                   <Link href={"/users"}>
                     <span className="btn btn-sm btn-outline btn-success ml-5">
                       /users
@@ -37,8 +37,8 @@ export default function Home() {
               <div className="mt-5">
                 <h1 className="text-3xl font-bold">Add New User</h1>
                 <h2 className="mt-5">
-                  View an example of how to add a new user to the database using
-                  the POST method:
+                  View an example of adding a new user to the database using a
+                  POST method:
                   <Link href={"/adduser"}>
                     <span className="btn btn-sm btn-outline btn-success ml-5">
                       /adduser
