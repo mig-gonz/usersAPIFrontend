@@ -93,21 +93,24 @@ export default function UserPage({ params: { userId } }: Params) {
             ))}
           </dl>
         </div>
-        <div className="mt-8">
-          <div className="flex justify-center md:space-x-4">
-            <button
-              className="btn btn-outline btn-error w-40"
-              onClick={handleDelete}
-            >
-              Delete
-            </button>
-            <Link href={`/users/${userId}/update`}>
-              <button className="btn btn-outline btn-warning w-40">
-                Update
-              </button>
-            </Link>
-          </div>
-          <Link href={"/"} className="btn mt-3 btn-outline btn-success w-full">
+
+        <div className="md:grid grid-cols-2 gap-4 mt-8">
+          <button
+            className="btn btn-outline btn-error w-40  mt-3 "
+            onClick={handleDelete}
+          >
+            Delete
+          </button>
+          <Link
+            href={`/users/${userId}/update`}
+            className="btn btn-outline btn-success mt-3 w-40"
+          >
+            Update
+          </Link>
+          <Link href={"/"} className="btn mt-3 btn-outline btn-warning w-40">
+            Go Back
+          </Link>
+          <Link href={"/"} className="btn mt-3 btn-outline btn-warning w-40">
             Home
           </Link>
         </div>

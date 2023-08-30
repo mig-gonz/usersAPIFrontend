@@ -64,7 +64,7 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div>
-              <h1 className="text-black font-semibold uppercase font-mono">
+              <h1 className="text-black uppercase font-['Ubuntu']">
                 mock user data
               </h1>
             </div>
